@@ -14,5 +14,15 @@
             this.colunas = colunas;
             pecas = new Peca[linhas, colunas];
         }
+
+        /* 
+         Método criado para retornar a peça na linha e coluna, já que o vetor Peca só enxerga dentro 
+         dessa classe.
+             */
+
+        public Peca peca (int linha, int coluna)
+        {
+            return pecas[linha, coluna];
+        }
     }
 }
