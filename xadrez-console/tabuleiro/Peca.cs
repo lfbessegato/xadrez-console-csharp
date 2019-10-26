@@ -15,5 +15,11 @@
             this.cor = cor;
             qteMovimentos = 0;
         }
+
+        //Método para incrementar a Qdt de Movimento
+        public void incrementarQdteMovimentos()
+        {
+            qteMovimentos ++;
+        }
     }
 }
