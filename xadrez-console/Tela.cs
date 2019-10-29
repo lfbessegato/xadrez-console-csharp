@@ -16,12 +16,21 @@ namespace xadrez_console
 
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
 
-            //Avisa que o Jogador está em Xeque.
-            if (partida.xeque)
+            //Testo se a partida não está terminada
+            if (!partida.terminada)
             {
-                Console.WriteLine("XEQUE!");
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                //Avisa que o Jogador está em Xeque.
+                if (partida.xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
         }
 
@@ -93,7 +102,6 @@ namespace xadrez_console
             Console.BackgroundColor = fundoOriginal;
         }
 
-
         public static PosicaoXadrez lerPosicaoXadrez()
         {
             string s = Console.ReadLine();
@@ -102,7 +110,6 @@ namespace xadrez_console
 
             return new PosicaoXadrez(coluna, linha);
         }
-
 
         public static void imprimirPeca(Peca peca)
         {
