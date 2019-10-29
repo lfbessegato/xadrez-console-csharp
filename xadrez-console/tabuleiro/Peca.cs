@@ -22,6 +22,12 @@
             qteMovimentos ++;
         }
 
+        //Decrementar o incremento de movimento, devido a realização do método desfazMovimento()
+        public void decrementarQtdeMovimentos()
+        {
+            qteMovimentos --;
+        }
+
         //Testa de se tem algum movimento possivel
         public bool existeMovimentosPossiveis()
         {
